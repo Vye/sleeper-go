@@ -32,9 +32,9 @@ func SleepHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	seconds, err := strconv.Atoi(vars["seconds"])
 	if err != nil {
-		fmt.Fprint(w, "Could not convert to int")
+		fmt.Fprint(w, "Could not convert to int\n")
 	}
 	time.Sleep(time.Duration(seconds) * time.Second)
-	fmt.Fprintf(w, "woke after %s seconds", vars["seconds"])
+	fmt.Fprintf(w, "woke after %s seconds\n", vars["seconds"])
 }
 
